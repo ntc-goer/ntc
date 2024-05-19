@@ -1,4 +1,4 @@
-package go_ntc
+package ntc
 
 import "reflect"
 
