@@ -30,3 +30,21 @@ func Contain[T any](its []T, i T) bool {
 	}
 	return false
 }
+
+func FindOne[T any](its []T, f func(it T) bool) *T {
+	for _, it := range its {
+		if f(it) {
+			return &it
+		}
+	}
+	return nil
+}
+
+func Map[T any, V any](its []T, f func(it T) V) []V {
+	result := make([]V, 0)
+	for _, it := range its {
+		fIt := f(it)
+		result = append(result, fIt)
+	}
+	return result
+}
